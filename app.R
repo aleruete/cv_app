@@ -7,8 +7,8 @@ library(tidyverse)
 library(shinyjs)
 
 
-# source("render_cv.r")
-# source("cv_long_printing_functions.R")
+source("render_cv.r")
+source("cv_long_printing_functions.R")
 long_cv_templates <- c("awesomecv", "hyndman", "moderncv")
 
 # Approx. number of words
