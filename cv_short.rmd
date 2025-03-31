@@ -127,19 +127,6 @@ cv %>% print_text_block("intro")
 
 ```
 
-```{r edu-heading, eval = eval_edu} 
-
-cat("Education {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------") 
-
-``` 
-
-```{r edu, eval = eval_edu}
-
-cv %>% print_section("education")
-
-```
-
 ```{r emp-heading, eval = eval_emp} 
 
 cat("Employment {data-icon=suitcase}
@@ -150,6 +137,19 @@ cat("Employment {data-icon=suitcase}
 ```{r employment, eval = eval_emp}
 
 cv %>% print_section("employment")
+
+```
+
+```{r edu-heading, eval = eval_edu} 
+
+cat("Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------") 
+
+``` 
+
+```{r edu, eval = eval_edu}
+
+cv %>% print_section("education")
 
 ```
 
@@ -181,8 +181,6 @@ cv %>% print_publications()
 
 Disclaimer {#disclaimer style="width: var(--sidebar-width); padding-left: var(--sidebar-horizontal-padding);"}
 --------------------------------------------------------------------------------
-
-This resume was made with [Shiny](https://javierelio.shinyapps.io/cv_app/).
 
 Last updated on `r Sys.Date()`.
 
