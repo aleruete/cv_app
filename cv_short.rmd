@@ -10,7 +10,7 @@ output:
 # uncomment this line to produce HTML and PDF in RStudio:
 knit: pagedown::chrome_print
 params:
-  cv_name: "Javier Elio"
+  cv_name: "Alejandro Ruete"
   data_path: "cv_data.xlsx"
   summary: TRUE
   skills: TRUE

@@ -3,8 +3,8 @@ output:
   vitae::awesomecv
 
 params:
-  cv_name: "Javier" 
-  cv_surname: "Elio"
+  cv_name: "Alejandro" 
+  cv_surname: "Ruete"
   data_path: "cv_data.xlsx"
   summary_long: TRUE
   education_long: TRUE
