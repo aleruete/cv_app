@@ -184,7 +184,7 @@ print_skill_bars <- function(cv,
 >{skill}</div>"
   }
   
-  cv$software %>%
+  cv$skills %>%
     dplyr::mutate(width_percent = round(100*as.numeric(level)/out_of)) %>%
     glue::glue_data(glue_template) %>%
     print()

@@ -3,15 +3,17 @@ title: "Resume"
 date: "`r Sys.Date()`"
 output:
   pagedown::html_resume:
+    css: ['resume.css', 'resume_ale.css'] #'ale_cv.css' #['dd_cv.css', 'resume-left.css'] #'resume_ale.css' #
     # set it to true for a self-contained HTML page but it'll take longer to render
     self_contained: false
+    # aside: left
 # uncomment this line to produce HTML and PDF in RStudio:
 knit: pagedown::chrome_print
 params:
   cv_name: "Javier Elio"
   data_path: "cv_data.xlsx"
   summary: TRUE
-  software: TRUE
+  skills: TRUE
   languages: TRUE
   education: TRUE
   employment: TRUE
@@ -41,7 +43,7 @@ cv_name <- params$cv_name
 
 # Print sections if TRUE
 eval_text <- params$summary
-eval_sof  <- params$software
+eval_ski  <- params$skills
 eval_lan  <- params$languages
 eval_edu  <- params$education
 eval_emp  <- params$employment
@@ -59,7 +61,7 @@ eval_app  <- params$apps
   padding: 0.1rem 0.25rem;
   margin-top: 3px;
   position: relative;
-  width: 100%;
+  width: 80%;
 }
 
 .extra-sidebar {
@@ -75,10 +77,20 @@ eval_app  <- params$apps
   margin-top: 0;
 }
 
+.aside {
+  padding-top: 0;
+}
+
+.aside > p:first-of-type {
+  margin-top: 0;
+}
+
 ```
 
 Aside
 ================================================================================
+
+![aleruete](Greensway-Alejandro-Ruete-231014-1-400x400.jpg){width=80%}
 
 Contact Info {#contact}
 --------------------------------------------------------------------------------
@@ -89,14 +101,14 @@ cv %>% print_contact_info()
 
 ```
 
-```{r software-heading, eval = eval_sof} 
+```{r skills-heading, eval = eval_ski} 
 
-cat("Software {#software}
+cat("Skills {#skills}
 --------------------------------------------------------------------------------") 
 
 ``` 
 
-```{r software, eval = eval_sof}
+```{r skills, eval = eval_ski}
 
 cv %>% print_skill_bars()
 

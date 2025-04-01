@@ -49,7 +49,7 @@ ui <- fluidPage(
       p("- ", strong("entries_data:"), "information about your education,
           employments, training and teaching activities, grants, awards, disemination."),
       
-      p("- ", strong("software:"), "software skills."),
+      p("- ", strong("skills:"), "skills."),
       
       p("- ", strong("languages:"), "language skills."),
       
@@ -99,38 +99,38 @@ ui <- fluidPage(
         p("Both CV templates, however, use the same excel file for importing the data,
           which I think is very handy!! You may find the excel template in",
           em("Download Excel template.")),
-        br(),
-        p("The app is free of use but if you would like to support me, you can do that on:",
-          br(), br(),
-          a(HTML(
-            "<a href=\"https://www.buymeacoffee.com/javierelio\">
-            <img src=\"https://img.buymeacoffee.com/button-api/?
-            text=Buy me a coffee&
-            emoji=&
-            slug=javierelio&
-            button_colour=FF5F5F&
-            font_colour=ffffff&
-            font_family=Cookie&
-            outline_colour=000000&
-            coffee_colour=FFDD00\" /></a>"
-            )
-            )
-          ),
+        br()#,
+        # p("The app is free of use but if you would like to support me, you can do that on:",
+        #   br(), br(),
+        #   a(HTML(
+        #     "<a href=\"https://www.buymeacoffee.com/javierelio\">
+        #     <img src=\"https://img.buymeacoffee.com/button-api/?
+        #     text=Buy me a coffee&
+        #     emoji=&
+        #     slug=javierelio&
+        #     button_colour=FF5F5F&
+        #     font_colour=ffffff&
+        #     font_family=Cookie&
+        #     outline_colour=000000&
+        #     coffee_colour=FFDD00\" /></a>"
+        #     )
+        #     )
+        #   ),
         
-        a(HTML(
-          "<script data-name=\"BMC-Widget\"
-          data-cfasync=\"false\" 
-          src=\"https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js\" 
-          data-id=\"javierelio\" 
-          data-description=\"Support me on Buy me a coffee!\"
-          data-message=\"\" 
-          data-color=\"#ff813f\" 
-          data-position=\"Right\" 
-          data-x_margin=\"18\" 
-          data-y_margin=\"18\">
-          </script>"
-          )
-          ),
+        # a(HTML(
+        #   "<script data-name=\"BMC-Widget\"
+        #   data-cfasync=\"false\"
+        #   src=\"https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js\"
+        #   data-id=\"javierelio\"
+        #   data-description=\"Support me on Buy me a coffee!\"
+        #   data-message=\"\"
+        #   data-color=\"#ff813f\"
+        #   data-position=\"Right\"
+        #   data-x_margin=\"18\"
+        #   data-y_margin=\"18\">
+        #   </script>"
+        #   )
+        #   ),
           
       ),
       
@@ -228,7 +228,7 @@ ui <- fluidPage(
                      column(
                        width = 4,
                        checkboxInput("summary", "CV summary", TRUE),
-                       checkboxInput("software", "Software", TRUE),
+                       checkboxInput("skills", "Skills", TRUE),
                        checkboxInput("languages", "Languages", TRUE),
                        checkboxInput("education", "Education", TRUE),
                        checkboxInput("employment", "Employment", TRUE)
@@ -397,7 +397,7 @@ server <- function(input, output, session) {
 # Short CV ----
   name_react <- reactive({ input$name }) %>% bindEvent(input$buildPDF) 
   summary_react <- reactive({ input$summary }) %>% bindEvent(input$buildPDF)
-  software_react <- reactive({ input$software }) %>% bindEvent(input$buildPDF)
+  skills_react <- reactive({ input$skills }) %>% bindEvent(input$buildPDF)
   languages_react <- reactive({ input$languages }) %>% bindEvent(input$buildPDF)
   education_react <- reactive({ input$education }) %>% bindEvent(input$buildPDF)
   employment_react <- reactive({ input$employment }) %>% bindEvent(input$buildPDF)
@@ -417,7 +417,7 @@ server <- function(input, output, session) {
         name_input = name_react(),
         path_input = input$upload$datapath,
         eval_text = summary_react(),
-        eval_sof = software_react(),
+        eval_ski = skills_react(),
         eval_lan = languages_react(),
         eval_edu = education_react(),
         eval_emp = employment_react(),

@@ -1,0 +1,4 @@
+:root{
+  --sidebar-background-color: #afe27f;
+    --main-width: calc(var(--content-width) - var(--sidebar-width));
+}
