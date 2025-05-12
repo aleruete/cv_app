@@ -92,7 +92,7 @@ Aside
 
 ![aleruete](Greensway-Alejandro-Ruete-231014-1-400x400.jpg){width=80%}
 
-Contact Info {#contact}
+Contact Info & Other {#contact}
 --------------------------------------------------------------------------------
 
 ```{r contact_info}
@@ -132,6 +132,8 @@ Main
 
 `r cv_name` {#title}
 --------------------------------------------------------------------------------
+
+`r pull(filter(cv$text_blocks, loc == "short_description"), text)` 
 
 ```{r text-block, eval = eval_text}
 
